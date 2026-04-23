@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate | Wisdom Arc</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">WISDOM ARC</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="generate.html" class="active">GENERATE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="generator-main">
+        <div class="generator-container">
+            <div class="generator-card">
+                <div class="card-header">
+                    <h1>Generate Wisdom</h1>
+                    <p>Click the button below to receive a unique AI-crafted quote</p>
+                </div>
+
+                <div class="quote-box">
+                    <div class="quote-icon">“</div>
+                    <div class="quote-text" id="quoteText">
+                        Your quote will appear here
+                    </div>
+                    <div class="quote-author" id="quoteAuthor">
+                        <span>—</span> Wisdom Arc
+                    </div>
+                </div>
+
+                <button class="generate-button" id="generateBtn">
+                    Generate Quote
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/quote.js"></script>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
