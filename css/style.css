@@ -440,3 +440,47 @@ body {
         padding: 0 1rem;
     }
 }
+/* 🔥 NEW FEATURES (SAFE ADD) */
+
+#quoteText, #quoteAuthor {
+    transition: opacity 0.3s ease;
+}
+
+/* user input */
+.user-section {
+    margin-top: 30px;
+}
+
+.user-section textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+}
+
+/* saved quotes */
+.saved-section {
+    margin-top: 30px;
+}
+
+.saved-quote {
+    background: rgba(255,255,255,0.05);
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.saved-quote button {
+    background: #ff4d4d;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
