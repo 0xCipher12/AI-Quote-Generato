@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Wisdom Arc</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -26,44 +25,85 @@
     <main class="about-main">
         <div class="about-container">
             <div class="about-card">
+
                 <h1>About Wisdom Arc</h1>
-                
+
+                <!-- VISION -->
                 <div class="about-section">
                     <h2>The Vision</h2>
-                    <p>Wisdom Arc is not just another quote generator. It is a bridge between artificial intelligence and human inspiration. Every quote you receive is born in real-time, crafted uniquely for you in that exact moment.</p>
+                    <p>
+                        Wisdom Arc is designed to inspire users through meaningful and motivational quotes. 
+                        It combines simplicity with creativity, allowing users to explore ideas and express their own thoughts.
+                    </p>
                 </div>
 
+                <!-- FEATURES -->
+                <div class="about-section">
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>Generate inspirational quotes instantly</li>
+                        <li>Write your own personal quotes</li>
+                        <li>Save quotes using browser storage</li>
+                        <li>Delete and manage saved quotes</li>
+                        <li>Clean and modern user interface</li>
+                    </ul>
+                </div>
+
+                <!-- HOW IT WORKS -->
                 <div class="about-section">
                     <h2>How It Works</h2>
-                    <p>Powered by Google's Gemini AI, our system generates original, thoughtful quotes on demand. No databases. No repeats. Each quote is fresh, unique, and created from scratch using advanced language models.</p>
+                    <p>
+                        The application uses JavaScript to dynamically generate quotes and manage user input. 
+                        Saved quotes are stored in the browser using LocalStorage, allowing users to revisit their ideas anytime.
+                    </p>
                 </div>
 
+                <!-- TECHNOLOGY -->
                 <div class="about-section">
-                    <h2>Technology</h2>
+                    <h2>Technologies Used</h2>
                     <div class="tech-grid">
                         <span class="tech-item">HTML5</span>
                         <span class="tech-item">CSS3</span>
-                        <span class="tech-item">JavaScript ES6</span>
-                        <span class="tech-item">Google Gemini AI</span>
-                        <span class="tech-item">REST API</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">LocalStorage</span>
                     </div>
                 </div>
 
+                <!-- PROJECT DETAILS -->
                 <div class="about-section">
                     <h2>Project Details</h2>
-                    <p><strong>Version:</strong> 1.0.0<br>
-                    <strong>Design:</strong> Pure CSS, No Frameworks<br>
-                    <strong>API:</strong> Google Gemini AI Free Tier<br>
-                    <strong>Purpose:</strong> Showcasing LLM Integration</p>
+                    <p>
+                        <strong>Version:</strong> 1.1.0<br>
+                        <strong>Type:</strong> Frontend Web Application<br>
+                        <strong>Storage:</strong> Browser LocalStorage<br>
+                        <strong>Purpose:</strong> Academic Project & Skill Demonstration
+                    </p>
                 </div>
 
+                <!-- AUTHOR -->
+                <div class="about-section">
+                    <h2>About the Developer</h2>
+                    <p>
+                        This project was developed as part of a learning journey in web development, 
+                        focusing on building interactive and user-friendly applications.
+                    </p>
+                </div>
+
+                <!-- CTA -->
                 <div class="about-footer">
                     <a href="generate.html" class="btn-primary">Start Generating →</a>
                 </div>
+
             </div>
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer style="text-align:center; padding:20px; opacity:0.6;">
+        © 2026 Wisdom Arc | Built by Muskaan
+    </footer>
+
+    <!-- Navbar Scroll -->
     <script>
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
@@ -74,5 +114,6 @@
             }
         });
     </script>
+
 </body>
 </html>
