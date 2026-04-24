@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate | Wisdom Arc</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -26,11 +25,13 @@
     <main class="generator-main">
         <div class="generator-container">
             <div class="generator-card">
+
                 <div class="card-header">
                     <h1>Generate Wisdom</h1>
                     <p>Click the button below to receive a unique AI-crafted quote</p>
                 </div>
 
+                <!-- AI Quote -->
                 <div class="quote-box">
                     <div class="quote-icon">“</div>
                     <div class="quote-text" id="quoteText">
@@ -44,13 +45,72 @@
                 <button class="generate-button" id="generateBtn">
                     Generate Quote
                 </button>
+
+                <!-- ✨ NEW: USER INPUT -->
+                <div class="user-section">
+                    <h2>Write Your Own Quote ✍️</h2>
+                    <textarea id="userQuote" placeholder="Write something inspiring..."></textarea>
+                    <button onclick="saveQuote()" class="generate-button">Save Quote</button>
+                </div>
+
+                <!-- ✨ SAVED QUOTES -->
+                <div class="saved-section">
+                    <h2>Your Saved Quotes ❤️</h2>
+                    <div id="savedQuotes"></div>
+                </div>
+
             </div>
         </div>
     </main>
 
+    <!-- Existing JS -->
     <script src="js/quote.js"></script>
 
+    <!-- ✨ NEW SCRIPT -->
     <script>
+        function saveQuote() {
+            let quote = document.getElementById("userQuote").value;
+
+            if (quote.trim() === "") {
+                alert("Write something first!");
+                return;
+            }
+
+            let quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+            quotes.push(quote);
+
+            localStorage.setItem("quotes", JSON.stringify(quotes));
+
+            document.getElementById("userQuote").value = "";
+            displayQuotes();
+        }
+
+        function deleteQuote(index) {
+            let quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+            quotes.splice(index, 1);
+            localStorage.setItem("quotes", JSON.stringify(quotes));
+            displayQuotes();
+        }
+
+        function displayQuotes() {
+            let quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+            let container = document.getElementById("savedQuotes");
+
+            container.innerHTML = "";
+
+            quotes.forEach((q, index) => {
+                container.innerHTML += `
+                    <div class="saved-quote">
+                        <p>${q}</p>
+                        <button onclick="deleteQuote(${index})">Delete</button>
+                    </div>
+                `;
+            });
+        }
+
+        displayQuotes();
+
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -60,5 +120,6 @@
             }
         });
     </script>
+
 </body>
 </html>
